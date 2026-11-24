@@ -304,6 +304,10 @@ main {
   color: var(--text-primary);
 }
 
+.hero-title-compact {
+  display: none;
+}
+
 .section-title {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 700;
@@ -402,7 +406,7 @@ main {
 }
 
 .hero-media {
-  height: 100%;
+  width: 100%;
   min-height: 340px;
 }
 
@@ -967,6 +971,10 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .hero-media {
+    min-height: 0;
+  }
+
   .metrics-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1006,6 +1014,14 @@ main {
 }
 
 @media (max-width: 600px) {
+  .hero-title-wide {
+    display: none;
+  }
+
+  .hero-title-compact {
+    display: inline;
+  }
+
   .container {
     padding-inline: 16px;
   }

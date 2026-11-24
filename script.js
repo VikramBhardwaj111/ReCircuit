@@ -196,5 +196,3 @@ if (checklist) {
     byId("facility-no-matches").hidden = matches > 0;
   });
 }
-
-setUpDropoff();
