@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accepted Items — ReCircuit E-Waste Collection</title>
+    <meta
+      name="description"
+      content="Browse accepted e-waste categories, handling guidelines, and non-accepted exclusions before scheduling a collection."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">ReCircuit</a>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="categories.html" class="nav-link" aria-current="page">Accepted Items</a>
+          <a href="schedule.html" class="nav-link">Schedule Pickup</a>
+          <a href="dropoff.html" class="nav-link">Drop-Off Guide</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a href="schedule.html" class="btn btn-primary btn-sm nav-cta">Book Pickup</a>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Toggle navigation menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="stack-md">
+            <div class="stack-sm">
+              <p class="eyebrow">Sorting Reference</p>
+              <h1 class="page-title">Accepted E-Waste Categories</h1>
+              <p class="lead">
+                Filter by equipment group or search for a specific device to check preparation requirements and start
+                a pickup request.
+              </p>
+            </div>
+
+            <div class="split-grid">
+              <div class="media-frame media-frame-4x3">
+                <img src="./images/computing-and-mobile-hardware.jpg" alt="Used laptops, a tablet, and two smartphones on a collection workbench." />
+                <div class="media-fallback" aria-hidden="true">
+                  <span>Computing &amp; Mobile Hardware</span>
+                </div>
+              </div>
+              <div class="media-frame media-frame-4x3">
+                <img src="./images/batteries-and-power-cables.jpg" alt="Laptop battery packs and household batteries sorted beside coiled power cords." />
+                <div class="media-fallback" aria-hidden="true">
+                  <span>Batteries &amp; Power Cables</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="segmented-group" role="group" aria-label="Filter categories by equipment group">
+              <button type="button" class="filter-tab" data-category-filter="All" aria-pressed="true">All</button>
+              <button type="button" class="filter-tab" data-category-filter="Computing" aria-pressed="false">Computing</button>
+              <button type="button" class="filter-tab" data-category-filter="Mobile" aria-pressed="false">Mobile</button>
+              <button type="button" class="filter-tab" data-category-filter="Batteries & Power" aria-pressed="false">
+                Batteries &amp; Power
+              </button>
+              <button type="button" class="filter-tab" data-category-filter="Appliances" aria-pressed="false">
+                Appliances
+              </button>
+            </div>
+
+            <div class="search-wrap">
+              <label for="category-search">Search</label>
+              <input
+                type="search"
+                id="category-search"
+                class="input"
+                placeholder="e.g. laptop, lithium, printer"
+              />
+            </div>
+          </div>
+
+          <p class="muted" id="categories-count" style="margin-bottom: 1.25rem;">Showing 6 of 6 categories</p>
+
+          <div class="cards-grid-3" id="categories-grid">
+            <article class="surface-card" data-category-group="Computing">
+              <div class="meta-line">
+                <span>Computing</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Data wipe recommended · Power off before packing</span>
+              </div>
+              <h3 class="step-title" style="margin-top: 0.5rem;">Computing &amp; Workstations</h3>
+              <ul class="item-list">
+                <li>Laptops, notebooks, and chromebooks</li>
+                <li>Desktop towers, servers, and motherboards</li>
+                <li>RAM modules, hard drives, and SSDs</li>
+              </ul>
+              <div class="feature-card-footer">
+                <a href="schedule.html?category=computing" class="btn btn-secondary btn-sm">
+                  Select for Pickup &rarr;
+                </a>
+              </div>
+            </article>
+            <article class="surface-card" data-category-group="Mobile">
+              <div class="meta-line">
+                <span>Mobile</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Remove SIM/SD cards · Factory reset device</span>
+              </div>
+              <h3 class="step-title" style="margin-top: 0.5rem;">Mobile Devices &amp; Tablets</h3>
+              <ul class="item-list">
+                <li>Smartphones and feature phones</li>
+                <li>Tablets and e-readers</li>
+                <li>Smartwatches and handheld GPS units</li>
+              </ul>
+              <div class="feature-card-footer">
+                <a href="schedule.html?category=mobile" class="btn btn-secondary btn-sm">
+                  Select for Pickup &rarr;
+                </a>
+              </div>
+            </article>
+            <article class="surface-card" data-category-group="Batteries &amp; Power">
+              <div class="meta-line">
+                <span>Batteries &amp; Power</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Tape exposed terminals · Keep dry</span>
+              </div>
+              <h3 class="step-title" style="margin-top: 0.5rem;">Batteries &amp; Power Packs</h3>
+              <ul class="item-list">
+                <li>Laptop and tool lithium-ion battery packs</li>
+                <li>Portable USB power banks</li>
+                <li>Desktop UPS backup batteries (sealed)</li>
+              </ul>
+              <div class="feature-card-footer">
+                <a href="schedule.html?category=batteries" class="btn btn-secondary btn-sm">
+                  Select for Pickup &rarr;
+                </a>
+              </div>
+            </article>
+            <article class="surface-card" data-category-group="Computing">
+              <div class="meta-line">
+                <span>Computing</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Protect screen face · Upright transport</span>
+              </div>
+              <h3 class="step-title" style="margin-top: 0.5rem;">Displays &amp; Monitors</h3>
+              <ul class="item-list">
+                <li>LCD and LED computer monitors</li>
+                <li>Flat-panel televisions</li>
+                <li>Digital signage and projectors</li>
+              </ul>
+              <div class="feature-card-footer">
+                <a href="schedule.html?category=displays" class="btn btn-secondary btn-sm">
+                  Select for Pickup &rarr;
+                </a>
+              </div>
+            </article>
+            <article class="surface-card" data-category-group="Batteries &amp; Power">
+              <div class="meta-line">
+                <span>Batteries &amp; Power</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Coil cords loosely · Bundle adapters</span>
+              </div>
+              <h3 class="step-title" style="margin-top: 0.5rem;">Cables, Chargers &amp; Peripherals</h3>
+              <ul class="item-list">
+                <li>AC power bricks, USB-C, and HDMI cables</li>
+                <li>Keyboards, mice, webcams, and docks</li>
+                <li>Wi-Fi routers, modems, and switches</li>
+              </ul>
+              <div class="feature-card-footer">
+                <a href="schedule.html?category=peripherals" class="btn btn-secondary btn-sm">
+                  Select for Pickup &rarr;
+                </a>
+              </div>
+            </article>
+            <article class="surface-card" data-category-group="Appliances">
+              <div class="meta-line">
+                <span>Appliances</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Empty liquids/dust · Unplug cords</span>
+              </div>
+              <h3 class="step-title" style="margin-top: 0.5rem;">Small Electronic Appliances</h3>
+              <ul class="item-list">
+                <li>Inkjet and laser printers, scanners</li>
+                <li>Microwaves, electric kettles, toasters</li>
+                <li>Small fans, irons, and audio speakers</li>
+              </ul>
+              <div class="feature-card-footer">
+                <a href="schedule.html?category=appliances" class="btn btn-secondary btn-sm">
+                  Select for Pickup &rarr;
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="empty-state" id="categories-empty" hidden>
+            <h3>No matching categories found</h3>
+            <p class="muted">Try clearing your search term or switching back to All categories.</p>
+            <button type="button" class="btn btn-secondary btn-sm" id="reset-cat-btn" style="margin-top: 1rem;">
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider">
+        <div class="container">
+          <div class="stack-sm" style="margin-bottom: 1.5rem;">
+            <p class="eyebrow">Safety Boundaries</p>
+            <h2 class="section-title">Items Not Accepted in Standard Collection</h2>
+            <p class="lead">
+              Keep hazardous household chemicals and non-electronic debris separate from electronics bins. Contact
+              <a href="mailto:vikram.bhardwaj200710@gmail.com" class="text-link">vikram.bhardwaj200710@gmail.com</a>
+              for guidance on bulk or specialized equipment.
+            </p>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Material Type</th>
+                  <th>Status</th>
+                  <th>Guidance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Leaking wet-cell or automotive acid batteries</td>
+                  <td class="status-text status-completed">Not Accepted</td>
+                  <td>Requires specialized hazardous-liquid containment facilities.</td>
+                </tr>
+                <tr>
+                  <td>Medical biohazard or radioactive devices</td>
+                  <td class="status-text status-completed">Not Accepted</td>
+                  <td>Must be decommissioned through certified clinical waste channels.</td>
+                </tr>
+                <tr>
+                  <td>Loose household garbage, glass, or paper</td>
+                  <td class="status-text status-completed">Not Accepted</td>
+                  <td>Sort through standard municipal recycling or waste collection.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="stack-sm">
+          <a href="index.html" class="brand">ReCircuit</a>
+          <p class="muted">E-Waste Collection System · Ready for live facility data integration</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="categories.html">Accepted Items</a>
+          <a href="schedule.html">Schedule Pickup</a>
+          <a href="dropoff.html">Drop-Off Guide</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          Contact: <a href="mailto:vikram.bhardwaj200710@gmail.com">vikram.bhardwaj200710@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

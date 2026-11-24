@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop-Off Guide — ReCircuit E-Waste Collection</title>
+    <meta
+      name="description"
+      content="Complete your device preparation checklist before dropping off e-waste and view example collection point entries."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">ReCircuit</a>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="categories.html" class="nav-link">Accepted Items</a>
+          <a href="schedule.html" class="nav-link">Schedule Pickup</a>
+          <a href="dropoff.html" class="nav-link" aria-current="page">Drop-Off Guide</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a href="schedule.html" class="btn btn-primary btn-sm nav-cta">Book Pickup</a>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Toggle navigation menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Drop-Off Readiness</p>
+              <h1 class="page-title">Prepare Devices &amp; Locate Collection Points</h1>
+              <p class="lead">
+                Before bringing electronics to a collection center, complete the safety and data-protection steps below.
+                The directory below shows example collection centers.
+              </p>
+            </div>
+            <div class="media-frame media-frame-16x9">
+              <img src="./images/collection-hub-bins.jpg" alt="Electronics recycling bins holding sorted wiring, metal parts, and circuit boards." />
+              <div class="media-fallback" aria-hidden="true">
+                <span>Collection Hub Bins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider">
+        <div class="container">
+          <div class="stack-md">
+            <div class="row-between">
+              <div class="stack-sm">
+                <p class="eyebrow">Pre-Drop-Off Checklist</p>
+                <h2 class="section-title">5 Steps Before Handover</h2>
+              </div>
+              <div class="row-actions">
+                <span class="tabular" id="prep-progress-text">2 of 5 completed</span>
+                <button type="button" id="reset-checklist-btn" class="btn btn-ghost btn-sm">Reset Checklist</button>
+              </div>
+            </div>
+
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill" id="prep-progress-fill" style="width: 40%"></div>
+            </div>
+
+            <ul class="checklist" id="prep-checklist">
+              <li class="checklist-item is-checked">
+                <input type="checkbox" id="prep-backup" checked />
+                <label for="prep-backup">Back up personal files and perform a factory reset on laptops, phones, and tablets.</label>
+              </li>
+              <li class="checklist-item is-checked">
+                <input type="checkbox" id="prep-cards" checked />
+                <label for="prep-cards">Remove SIM cards, microSD cards, and external USB drives before handover.</label>
+              </li>
+              <li class="checklist-item">
+                <input type="checkbox" id="prep-tape" />
+                <label for="prep-tape">Cover exposed lithium-ion battery terminals with clear electrical or packing tape.</label>
+              </li>
+              <li class="checklist-item">
+                <input type="checkbox" id="prep-cables" />
+                <label for="prep-cables">Coil loose power cables and keep matching chargers bundled together.</label>
+              </li>
+              <li class="checklist-item">
+                <input type="checkbox" id="prep-damaged" />
+                <label for="prep-damaged">Place cracked displays or swollen batteries into a separate rigid container.</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider">
+        <div class="container">
+          <div class="stack-md">
+            <div class="row-between">
+              <div class="stack-sm">
+                <p class="eyebrow">Facility Directory</p>
+                <h2 class="section-title">Example Collection Centers</h2>
+              </div>
+              <div class="search-wrap">
+                <label for="facility-search">Filter</label>
+                <input type="search" id="facility-search" class="input" placeholder="Search city or name" />
+              </div>
+            </div>
+
+            <div class="table-wrap" id="facility-list">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Collection Point</th>
+                    <th scope="col">City / Area</th>
+                    <th scope="col">Accepted Items</th>
+                    <th scope="col">Operating Hours</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Central Campus E-Waste Depot</strong></td>
+                    <td>North Campus</td>
+                    <td>Computers, Phones, Batteries, Peripherals</td>
+                    <td class="tabular">Mon – Fri: 08:30 – 17:00</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Metro Electronics Recovery Station</strong></td>
+                    <td>Downtown District</td>
+                    <td>All Consumer Electronics &amp; Small Appliances</td>
+                    <td class="tabular">Tue – Sat: 09:00 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td><strong>GreenTech Materials Sorting Hub</strong></td>
+                    <td>East Industrial Park</td>
+                    <td>Displays, Server Hardware, Heavy Electronics</td>
+                    <td class="tabular">Mon – Fri: 08:00 – 16:30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="empty-state" id="facility-no-matches" role="status" hidden>
+              <h3>No matching collection centers</h3>
+              <p class="muted">Try searching with a different keyword or location.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="stack-sm">
+          <a href="index.html" class="brand">ReCircuit</a>
+          <p class="muted">E-Waste Collection System · Ready for live facility data integration</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="categories.html">Accepted Items</a>
+          <a href="schedule.html">Schedule Pickup</a>
+          <a href="dropoff.html">Drop-Off Guide</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          Contact: <a href="mailto:vikram.bhardwaj200710@gmail.com">vikram.bhardwaj200710@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

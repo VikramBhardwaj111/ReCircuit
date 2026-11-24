@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Pickup — ReCircuit E-Waste Collection</title>
+    <meta
+      name="description"
+      content="Email an e-waste pickup request with your device details and preferred collection window."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">ReCircuit</a>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="categories.html" class="nav-link">Accepted Items</a>
+          <a href="schedule.html" class="nav-link" aria-current="page">Schedule Pickup</a>
+          <a href="dropoff.html" class="nav-link">Drop-Off Guide</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a href="schedule.html" class="btn btn-primary btn-sm nav-cta">Book Pickup</a>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Toggle navigation menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="stack-sm" style="margin-bottom: 2.25rem;">
+            <p class="eyebrow">E-Waste Collection</p>
+            <h1 class="page-title">Request an E-Waste Pickup</h1>
+            <p class="lead">
+              Enter your device category, quantity, and preferred collection window to prepare an email to the pickup coordinator.
+            </p>
+          </div>
+
+          <div class="workspace-grid">
+            <div class="form-panel">
+              <h2 class="section-title" style="margin-bottom: 1.25rem;">Pickup Request Form</h2>
+              <div id="pickup-form-feedback" class="banner" role="status" hidden style="margin-bottom: 1rem;">Review the draft in your email app and click Send.</div>
+              <a id="pickup-draft-link" class="btn btn-secondary btn-sm" hidden style="margin-bottom: 1.25rem;">Reopen Email Draft</a>
+
+              <form id="pickup-form" method="post" autocomplete="off">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="pickup-fullname">Full Name</label>
+                    <input type="text" id="pickup-fullname" name="fullName" class="input" placeholder="e.g. Aarav Sharma" pattern=".*\S.*" title="Enter your full name." required />
+                  </div>
+
+                  <div class="field">
+                    <label for="pickup-email">Email Address</label>
+                    <input type="email" id="pickup-email" name="email" class="input" placeholder="name@example.com" pattern=".+@.+\..+" title="Enter a valid email address." required />
+                  </div>
+
+                  <div class="field">
+                    <label for="pickup-phone">Phone Number</label>
+                    <input type="tel" id="pickup-phone" name="phone" class="input" placeholder="+91 98765 43210" pattern="(\D*\d){7,15}\D*" title="Enter a phone number with 7 to 15 digits." required />
+                  </div>
+
+                  <div class="field">
+                    <label for="pickup-category">E-Waste Category</label>
+                    <select id="pickup-category" name="category" class="select" required>
+                      <option value="">Select a category...</option>
+                      <option value="computing">Computing &amp; Workstations</option>
+                      <option value="mobile">Mobile Devices &amp; Tablets</option>
+                      <option value="batteries">Batteries &amp; Power Packs</option>
+                      <option value="displays">Displays &amp; Monitors</option>
+                      <option value="peripherals">Cables, Chargers &amp; Peripherals</option>
+                      <option value="appliances">Small Electronic Appliances</option>
+                    </select>
+                  </div>
+
+                  <div class="field field-full">
+                    <label for="pickup-address">Street Address &amp; City</label>
+                    <input
+                      type="text"
+                      id="pickup-address"
+                      name="address"
+                      class="input"
+                      placeholder="House/Flat No., Street, Landmark, City"
+                      pattern="\s*\S.{3,}\S\s*"
+                      title="Enter your street address and city."
+                      required
+                    />
+                  </div>
+
+                  <div class="field">
+                    <label for="pickup-quantity">Estimated Item Count</label>
+                    <input type="number" id="pickup-quantity" name="quantity" class="input" min="1" step="1" value="1" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="pickup-date">Preferred Date</label>
+                    <input type="date" id="pickup-date" name="pickupDate" class="input" required />
+                  </div>
+
+                  <div class="field field-full">
+                    <label for="pickup-window">Preferred Time Window</label>
+                    <select id="pickup-window" name="timeWindow" class="select" required>
+                      <option value="">Select a time window...</option>
+                      <option value="Morning (9:00 AM - 12:00 PM)">Morning (9:00 AM - 12:00 PM)</option>
+                      <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
+                      <option value="Evening (4:00 PM - 7:00 PM)">Evening (4:00 PM - 7:00 PM)</option>
+                    </select>
+                  </div>
+
+                  <div class="field field-full">
+                    <label for="pickup-notes">Handling Notes (Optional)</label>
+                    <textarea
+                      id="pickup-notes"
+                      name="notes"
+                      class="textarea"
+                      placeholder="Gate instructions, heavy monitor count, or battery notes"
+                    ></textarea>
+                  </div>
+
+                  <div class="field field-full">
+                    <button type="submit" class="btn btn-primary">Open Pickup Email Draft</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <aside class="surface-card stack-sm">
+              <h2 class="section-title">Sending Your Request</h2>
+              <p class="step-desc">
+                Click Send in your email app to submit the request. Wait for the coordinator to confirm your pickup time.
+              </p>
+              <p class="step-desc">
+                You can also email your pickup details directly to
+                <a class="metric-value-email" href="mailto:vikram.bhardwaj200710@gmail.com">vikram.bhardwaj200710@gmail.com</a>.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="stack-sm">
+          <a href="index.html" class="brand">ReCircuit</a>
+          <p class="muted">E-Waste Collection System · Ready for live facility data integration</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="categories.html">Accepted Items</a>
+          <a href="schedule.html">Schedule Pickup</a>
+          <a href="dropoff.html">Drop-Off Guide</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-contact">
+          Contact: <a href="mailto:vikram.bhardwaj200710@gmail.com">vikram.bhardwaj200710@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
